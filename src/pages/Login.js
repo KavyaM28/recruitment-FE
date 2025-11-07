@@ -22,12 +22,12 @@ const Login = () => {
     try {
       if (isRegister) {
         // ✅ Register new user
-        await axios.post("/auth/register", form);
+        await api.post("/auth/register", form);
         alert("✅ Registered successfully! Please log in.");
         setIsRegister(false);
       } else {
         // ✅ Login existing user
-        const res = await axios.post("/auth/login", {
+        const res = await api.post("/auth/login", {
           email: form.email,
           password: form.password,
         });
